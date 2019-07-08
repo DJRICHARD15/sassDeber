@@ -2,10 +2,6 @@ body {
     @include text_body;
     background-color: $blanco;
 }
-
-.main-container{
-    margin-top:20px;
-}
 #Contactos{
 @include text_body;
 text-align: center;

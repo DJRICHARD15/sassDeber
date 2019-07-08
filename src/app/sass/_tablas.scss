@@ -21,9 +21,8 @@ table {
     > tbody {
       > tr {
         color:$morado;
-        background-color: lighten($verde,10);
         &:nth-child(odd) {
-          background-color: $verde;
+          background-color: rgba(2, 124, 104, 0.561);
         }
         &:hover {
           background-color: lighten($azulOscuro,5);
