@@ -15,3 +15,15 @@ figure img{
     border-style: solid;
     border-color: $verde;
 }
+
+
+.colorbutton{
+    @include border-radius(5px);
+   font-size: 15em;
+    @include button(map-keys($buttonscolors)...);
+}
+
+.texto1{
+    @include border-radius(5px);
+ font-size: 20em;
+}

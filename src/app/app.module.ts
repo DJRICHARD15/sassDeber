@@ -7,19 +7,24 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { ContactosComponent } from './contactos/contactos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NoticiaComponent } from './noticia/noticia.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactosComponent,
     NoticiaComponent,
+    FormularioComponent,
  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    
     // AppRoutingModule
     
   ],

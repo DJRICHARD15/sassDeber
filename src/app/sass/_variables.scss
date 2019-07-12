@@ -57,3 +57,11 @@ $regular: 300;
 $semi_bold: 400;
 $bold: 700;
 $ultra_bold: 900;
+
+$buttons: true !default;
+$buttonscolors:(
+    primario: yellow,
+    secundario: blue,
+    alerta:red,
+    oranges:orange
+);
