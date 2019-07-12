@@ -24,7 +24,7 @@ export class AppComponent {
   crearLoginForm(){
     this.loginform = this.formBuilder.group({
       usuario: ['', [Validators.required, Validators.minLength(2),Validators.maxLength(15)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email,Validators.minLength(5)]],
       password: ['' ,[Validators.required,Validators.minLength(6)]],
       mensaje:['']
     });
@@ -44,6 +44,8 @@ export class AppComponent {
         alert('usuario'+this.usuario),
         alert('email'+this.email),
         alert('password'+this.password)
+      }if(this.mensaje!=JSON.stringify(this.loginform.controls['mensaje'].errors)){ 
+               alert('datos ingresados correctamente')
       }
     }
   }
