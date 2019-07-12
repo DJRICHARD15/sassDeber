@@ -12,7 +12,7 @@ export class AppComponent {
   usuario:string
   email: string
   password: string
-  mensaje :any
+
 
   constructor(private formBuilder: FormBuilder) { }
   
@@ -23,29 +23,27 @@ export class AppComponent {
 
   crearLoginForm(){
     this.loginform = this.formBuilder.group({
-      usuario: ['', [Validators.required, Validators.minLength(2),Validators.maxLength(15)]],
-      email: ['', [Validators.required, Validators.email,Validators.minLength(5)]],
-      password: ['' ,[Validators.required,Validators.minLength(6)]],
-      mensaje:['']
+      usuario: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,10}')]],
+      email: ['', [Validators.required,Validators.pattern('[^this.][a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')]],
+      password: ['' ,[Validators.required,Validators.pattern('[^self.][a-zA-Z0-9]{5,10}')]],
+    
     });
   }
 
   validaLoginForm(){
     if(this.loginform.valid){
-      this.usuario=this.loginform.controls['usuario'].value
-      this.email = this.loginform.controls['email'].value
-      this.password = this.loginform.controls['password'].value
+      this.usuario=JSON.stringify(console.log(this.loginform.controls['usuario'].value))              
+      this.email = JSON.stringify(console.log(this.loginform.controls['email'].value))
+      this.password =JSON.stringify(console.log(this.loginform.controls['password'].value))
     }else{
       this.usuario = JSON.stringify(this.loginform.controls['usuario'].errors)
       this.email = JSON.stringify(this.loginform.controls['email'].errors)
       this.password =JSON.stringify(this.loginform.controls['password'].errors)
-      this.mensaje =  JSON.stringify(this.loginform.controls['mensaje'].errors)
-      if(this.mensaje){
-        alert('usuario'+this.usuario),
-        alert('email'+this.email),
-        alert('password'+this.password)
-      }if(this.mensaje!=JSON.stringify(this.loginform.controls['mensaje'].errors)){ 
-               alert('datos ingresados correctamente')
+    
+      if(this.loginform.invalid){
+       console.log('usuario'+this.usuario),
+       console.log('email'+this.email),
+        console.log('password'+this.password)
       }
     }
   }
