@@ -24,8 +24,8 @@ export class AppComponent {
   crearLoginForm(){
     this.loginform = this.formBuilder.group({
       usuario: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,10}')]],
-      email: ['', [Validators.required,Validators.pattern('[^this.][a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')]],
-      password: ['' ,[Validators.required,Validators.pattern('[^self.][a-zA-Z0-9]{5,10}')]],
+      email: ['', [Validators.required,Validators.pattern('[a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')]],
+      password: ['' ,[Validators.required,Validators.pattern('[a-zA-Z0-9]{5,10}')]],
     
     });
   }

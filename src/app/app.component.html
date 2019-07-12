@@ -214,11 +214,11 @@
                 <div class="col-md-12">
                     <textarea name="message" id="message" cols="30" rows="10" class="form-control"
                         placeholder="Comentarios y sugerencias"></textarea>
-                        <span class="texto1" *ngIf = "mensaje !=null"></span>
+                        
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Enviar Mensaje"   (click)="validaLoginForm()" class="colorbutton oranges">
+                <input type="submit" value="Enviar Mensaje" [disabled]="!loginform.valid" (click)="validaLoginForm()" class="colorbutton secundario">
             </div>
         </form>
        
